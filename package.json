@@ -1,0 +1,15 @@
+{
+  "name": "inv_graphql",
+  "version": "1.0.0",
+  "description": "inventory managemnet with graphql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.10.0"
+  }
+}
