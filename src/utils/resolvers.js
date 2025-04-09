@@ -2,7 +2,7 @@ import { User } from "../models/user.model.js";
 import { Item } from "../models/item.model.js";
 import { Bill } from "../models/bill.model.js";
 import { uploadOnCloudinary } from "./cloudinary.js";
-import { generateAccessAndRefreshTokens } from "./generateRefreshAndAccessToken.js";
+import { generateAccessAndRefreshTokens } from "./generateAccessAndRefershToken.js";
 import { ApiError } from "./ApiError.js";
 
 const resolvers = {
@@ -116,7 +116,14 @@ const resolvers = {
       const { accessToken, refreshToken } =
         await generateAccessAndRefreshTokens(user._id);
 
-      return { user, accessToken, refreshToken };
+      // Return user and tokens
+      return {
+        user,
+        tokens: {
+          accessToken,
+          refreshToken,
+        },
+      };
     },
   },
 };
